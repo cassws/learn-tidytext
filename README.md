@@ -12,7 +12,9 @@ Two key references for our work today:
 2. [Text Mining with R book](https://www.tidytextmining.com/)
 
 
+# Slides for today
 
+[Here are today's slides (still-in-progress!)](slides/workshop-slides.html)
 
 
 # License

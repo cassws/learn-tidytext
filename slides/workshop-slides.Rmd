@@ -1,0 +1,82 @@
+---
+title: "Let's explore text with R + tidytext"
+subtitle: ""
+author: "Cass Wilkinson Saldaña"
+date: "2021-05-03"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+.pull-right[
+![Eliza museum exhibit](images/eliza_museum_exhibit.jpg)
+
+]
+
+
+---
+class: center, middle
+
+.center[
+![Eliza dialogue](images/eliza_conversation.jpeg)
+]
+
+
+---
+class: center, middle
+
+.center[
+![Gofundme for I Need a Car transit fundraiser](images/transit_gofundme.jpg)
+]
+
+---
+.center[
+![Plots of sentiment changes across Jane Austen novels](images/sentiment_austen.jpg)
+
+]
+
+---
+
+# Introduction to working with text
+
+- Text as data
+- Answering questions with text analysis methods
+- TidyText
+- Your turn 
+
+---
+class: center, middle
+
+# Data science is all about creative problem solving
+
+Kind of like:
+* Cooking a recipe (and adding your own ingredients)
+* Getting a couch up a narrow staircase
+* Sketching a bird
+
+There's an "ideal" problem space (sudoku puzzle) and the actual problem space (designing a seating chart)
+
+---
+class: inverse, center, middle
+
+# What happens when you treat text like data?
+
+---
+class: center, middle
+
+.center[
+![Gofundme for I Need a Car transit fundraiser](images/transit_gofundme.jpg)
+]
+
+---
+class: center, middle
+
+# 1. Always start with your research question.
+
