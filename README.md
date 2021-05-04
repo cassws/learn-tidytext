@@ -1,21 +1,16 @@
-# Learn tidytext
 <!-- badges: start -->
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 <!-- badges: end -->
 
 ## Welcome!
 
-This workshop will introduce you to **text as data** and **text analyis**, particularly using the [tidytext](https://github.com/juliasilge/tidytext) R package.
+This workshop will introduce you to **text as data** and **text analyis**, particularly using the [tidytext](https://juliasilge.github.io/tidytext/) R package.
 
 
 # 1. Follow along with slides for today
 
-[Here are today's slides (still-in-progress!)](slides/workshop-slides.html)
+[Here are our slides](slides/workshop-slides.html)
 
-
-Two key references for our work today:
-1. [Introduction to tidytext vignette](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html)
-2. [Text Mining with R book](https://www.tidytextmining.com/)
 
 # 2. Interactive lesson
 
@@ -23,6 +18,11 @@ Today we'll be spending time with Julia Silge's fantastic learnr lesson, [Text m
 
 We'll spend about half an hour working through the lesson, but I encourage you to keep going after the session.
 
+# Keep learning
+
+Two key ways to continue learning:
+1. [Introduction to tidytext vignette](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html)
+2. [Text Mining with R book](https://www.tidytextmining.com/)
 
 
 # License
