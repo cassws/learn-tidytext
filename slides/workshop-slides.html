@@ -20,6 +20,57 @@ class: center, middle, inverse, title-slide
 
 
 
+
+# Hi!
+
+.pull-left[
+I'm Cass Wilkinson Saldaña (they/them)
+Data science educator + open source developer.
+
+## What I'm up to
+**Currently**: Children's Hospital of Philadelphia (Research Institute)
+
+**Previously**: Cornell University Library, UMich Library
+
+## Other pursuits
+Low-skill birding, pinball, TTRPGs, biking, trying new hobbies
+]
+
+.pull-right[
+![Cass in overalls gesturing at bird](images/cass_bird.jpg)
+*Gesturing at bird, unpictured.*
+]
+
+
+---
+# Data science is all about creative problem solving
+
+Data problems are like:
+
+- Cooking a recipe with a half-empty pantry
+- Getting a couch up a narrow staircase
+- Sketching a bird you can't quite see
+
+There's an "ideal" problem space and the actual problem space. 
+
+Or a mixture of **method** and **mess**.
+
+---
+class: inverse, center, middle
+
+# What happens when you treat text like (messy) data?
+
+---
+
+.pull-left[
+
+# ELIZA
+
+"ELIZA is an early natural language processing computer program created from 1964 to 1966 at the MIT Artificial Intelligence Laboratory by Joseph Weizenbaum.
+
+..Eliza simulated conversation by using a "pattern matching" and substitution methodology that gave users an illusion of understanding on the part of the program.." 
+- [Wikipedia](https://en.wikipedia.org/wiki/ELIZA)
+]
 .pull-right[
 ![Eliza museum exhibit](images/eliza_museum_exhibit.jpg)
 
@@ -29,6 +80,7 @@ class: center, middle, inverse, title-slide
 ---
 class: center, middle
 
+# The ELIZA Effect
 .center[
 ![Eliza dialogue](images/eliza_conversation.jpeg)
 ]
@@ -37,32 +89,31 @@ class: center, middle
 ---
 class: center, middle
 
-.center[
+.left[
 ![Gofundme for I Need a Car transit fundraiser](images/transit_gofundme.jpg)
 ]
 
 ---
 .center[
-![Plots of sentiment changes across Jane Austen novels](images/sentiment_austen.jpg)
 
+![Plot of GoFundMe campaign frequency](images/campaign_freq_pairs.png)
+Klein, N. J., Tran, M., &amp; Riley, S. (2020). Desperately Need a Car”: Analyzing Crowdfunding Campaigns for Car Purchases and Repairs on Gofundme.com. Travel Behaviour and Society, 21, 247-256.
 ]
 
 ---
+# Text mining in digital humanities
 
-# Introduction to working with text
+.center[
+![Plots of sentiment changes across Jane Austen novels](images/sentiment_austen.jpg)
 
-- Text as data
-- Answering questions with text analysis methods
-- TidyText
-- Your turn 
-
+]
 
 
 
 ---
 class: inverse, center, middle
 
-# What happens when you treat text like data?
+# Let's walk through one problem-solving process
 
 ---
 class: center, middle
@@ -71,10 +122,111 @@ class: center, middle
 ![Gofundme for I Need a Car transit fundraiser](images/transit_gofundme.jpg)
 ]
 
+
 ---
 class: center, middle
 
-# Always start with your research question.
+# 1. Understand what you care about
+
+---
+
+# “Desperately Need a Car”: Analyzing Crowdfunding Campaigns for Car Purchases and Repairs on Gofundme.com
+
+- First, how do campaigners on GoFundMe describe their need for personal
+vehicles? 
+- Second, what precipitating events led them to seek crowdfunding for a car purchase or
+repair? 
+- Third, what are broader contexts for these requests for financial assistance?
+
+---
+
+class: center, middle
+
+# 2. Pair text methods with data transformation
+
+---
+
+# Mixed methods!
+
+.pull-left[
+1. Web scraping: building a dataset from web materials
+2. **Text mining: word frequency and pairing**
+3. Qualitative coding: manual analysis of campaign narrative text
+]
+
+.pull-right[
+![Gofundme for I Need a Car transit fundraiser](images/transit_gofundme.jpg)
+![Tidy Data formatted table](images/tidy_data.png)
+]
+
+---
+class: center, middle
+
+--- 
+
+# What if tidy data, but text?
+
+.pull-left[
+![R code showing tidy text data from a Jane Austen novel](images/tidy_tokens.jpg)
+]
+
+.pull-right[
+
+"For tidy text mining, the **token** that is stored in each row is most often a single word, but can also be an n-gram, sentence, or paragraph. In the tidytext package, we provide functionality to tokenize by commonly used units of text like these and convert to a one-term-per-row format."
+
+Julia Silge and David Robinson, Text Mining with R: https://www.tidytextmining.com/tidytext.html
+]
+
+---
+
+class: center, middle
+
+# 3. Plan your recipe and start coding
+
+---
+
+# TidyText
+
+.pull-left[
+
+![GitHub profile for TidyText](images/gh-tidytext.jpg)
+]
+
+.pull-right[
+Hands-on for today!
+
+[https://juliasilge.shinyapps.io/learntidytext/](https://juliasilge.shinyapps.io/learntidytext/)
+
+Pay attention to **problem solving recipes**. How do you learn about research questions with text here? 
+
+]
+
+
+
+---
+class: inverse, center, middle
+
+# What did you find useful, frustrating, surprising?
+
+---
+
+# Keep exploring!
+
+.pull-left[
+![Text Mining with R book cover with rabbit](images/tmwr-cover.png)
+]
+
+.pull-right[
+
+![bird on a storm drain with a little bit of leaves for nesting](images/bird_on_the_wire.jpg)
+
+Cass Wilkinson Saldaña
+
+cassws.net
+
+@mxcatnap
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
