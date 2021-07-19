@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Let’s explore text with R + tidytext</title>
+    <title>Text mining with tidytext + R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Cass Wilkinson Saldaña" />
     <meta name="date" content="2021-05-03" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
   </head>
@@ -12,7 +13,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Let’s explore text with R + tidytext
+# Text mining with tidytext + R
 ### Cass Wilkinson Saldaña
 ### 2021-05-03
 
@@ -21,68 +22,83 @@ class: center, middle, inverse, title-slide
 
 
 
-# Hi!
 
 .pull-left[
+
+## Hello!
 I'm Cass Wilkinson Saldaña (they/them)
-Data science educator + open source developer.
 
 ## What I'm up to
-**Currently**: Children's Hospital of Philadelphia (Research Institute)
+**Currently**: Data Applications Specialist at City of Phila
 
-**Previously**: Cornell University Library, UMich Library
+**Previously**: Data Educator at CHOP, Data Librarian at Cornell Library
 
 ## Other pursuits
-Low-skill birding, pinball, TTRPGs, biking, trying new hobbies
+Low-skill birding, pinball, basketball
 ]
 
 .pull-right[
 ![Cass in overalls gesturing at bird](images/cass_bird.jpg)
-*Gesturing at bird, unpictured.*
+*The author gestures at a bird, unpictured.*
 ]
 
-
 ---
-# Data science is all about creative problem solving
 
-Data problems are like:
-
-- Cooking a recipe with a half-empty pantry
-- Getting a couch up a narrow staircase
-- Sketching a bird you can't quite see
-
-There's an "ideal" problem space and the actual problem space. 
-
-Or a mixture of **method** and **mess**.
-
----
-class: inverse, center, middle
-
-# What happens when you treat text like (messy) data?
-
----
+# For today
 
 .pull-left[
 
-# ELIZA
 
-"ELIZA is an early natural language processing computer program created from 1964 to 1966 at the MIT Artificial Intelligence Laboratory by Joseph Weizenbaum.
-
-..Eliza simulated conversation by using a "pattern matching" and substitution methodology that gave users an illusion of understanding on the part of the program.." 
-- [Wikipedia](https://en.wikipedia.org/wiki/ELIZA)
+![GitHub profile for TidyText](images/gh-tidytext.jpg)
 ]
+
 .pull-right[
-![Eliza museum exhibit](images/eliza_museum_exhibit.jpg)
+
+### Text as data
+
+### Using tidytext + R
+
+[tidytextmining.com](https://www.tidytextmining.com/)
+
+### Hands-on tutorial
+
+[https://juliasilge.shinyapps.io/learntidytext/](https://juliasilge.shinyapps.io/learntidytext/)
+
 
 ]
+
+---
+
+class: inverse, center, middle
+
+# What kinds of text data do you work with?
 
 
 ---
-class: center, middle
+## Text and data: challenges and methods!
 
-# The ELIZA Effect
-.center[
-![Eliza dialogue](images/eliza_conversation.jpeg)
+.pull-left[
+
+### Mismatching address strings
+
+### Open text response fields
+
+### Meaningful data embedded in text (eg scraped HTML from a website)
+
+### Extracting named entities (eg want to geocode city names)
+]
+
+.pull-right[
+
+### Text mining
+Extract/create structure from unstructured text data; count instances of words and phrases
+
+### Natural language processing
+Interpret text as written language; tag parts-of-speech; extract named entities, sentiments, meaning
+
+### Topic modeling
+Discover patterns of words and phrases across series of documents
+
 ]
 
 
@@ -97,95 +113,70 @@ class: center, middle
 .center[
 
 ![Plot of GoFundMe campaign frequency](images/campaign_freq_pairs.png)
-Klein, N. J., Tran, M., &amp; Riley, S. (2020). Desperately Need a Car”: Analyzing Crowdfunding Campaigns for Car Purchases and Repairs on Gofundme.com. Travel Behaviour and Society, 21, 247-256.
+Klein, N. J., Tran, M., &amp; Riley, S. (2020). "Desperately Need a Car”: Analyzing Crowdfunding Campaigns for Car Purchases and Repairs on Gofundme.com. Travel Behaviour and Society, 21, 247-256.
 ]
 
 ---
-# Text mining in digital humanities
+# "Desperately Need a Car” as text + data process
 
-.center[
-![Plots of sentiment changes across Jane Austen novels](images/sentiment_austen.jpg)
 
-]
+1. Create a dataframe from a website (web scraping)
+
+2. Split open text into sequence of words or tokens (tokenization)
+
+3. Count words or phrases (n-grams)
+
+4. Analyzing connections based on proximity of words/phrases (collocation)
 
 
 
 ---
 class: inverse, center, middle
 
-# Let's walk through one problem-solving process
+# tidytext
+
+---
+
+# Why tidy?
+
+
+![Tidy Data formatted table](images/tidy_data.png)
+
+---
+# Why tidy?
+
+"'Happy families are all alike; every
+unhappy family is unhappy in its own
+way
+Leo Tolstoy'
+
+Like families, tidy datasets are all alike but every messy dataset is messy in its own way." (2014, Wickham, "Tidy Data")
+
 
 ---
 class: center, middle
 
-.center[
-![Gofundme for I Need a Car transit fundraiser](images/transit_gofundme.jpg)
-]
 
-
----
-class: center, middle
-
-# 1. Understand what you care about
-
----
-
-# “Desperately Need a Car”: Analyzing Crowdfunding Campaigns for Car Purchases and Repairs on Gofundme.com
-
-- First, how do campaigners on GoFundMe describe their need for personal
-vehicles? 
-- Second, what precipitating events led them to seek crowdfunding for a car purchase or
-repair? 
-- Third, what are broader contexts for these requests for financial assistance?
-
----
-
-class: center, middle
-
-# 2. Pair text methods with data transformation
-
----
-
-# Mixed methods!
-
-.pull-left[
-1. Web scraping: building a dataset from web materials
-2. **Text mining: word frequency and pairing**
-3. Qualitative coding: manual analysis of campaign narrative text
-]
+# For text, each "tidy" record is a token
 
 .pull-right[
-![Gofundme for I Need a Car transit fundraiser](images/transit_gofundme.jpg)
-![Tidy Data formatted table](images/tidy_data.png)
-]
-
----
-class: center, middle
-
---- 
-
-# What if tidy data, but text?
-
-.pull-left[
 ![R code showing tidy text data from a Jane Austen novel](images/tidy_tokens.jpg)
 ]
 
-.pull-right[
+.pull-left[
 
-"For tidy text mining, the **token** that is stored in each row is most often a single word, but can also be an n-gram, sentence, or paragraph. In the tidytext package, we provide functionality to tokenize by commonly used units of text like these and convert to a one-term-per-row format."
+A **token** in text mining is a meaningful unit of analysis
+
+"For tidy text mining, the **token** that is stored in each row is most often a single word, but can also be an n-gram, sentence, or paragraph."
 
 Julia Silge and David Robinson, Text Mining with R: https://www.tidytextmining.com/tidytext.html
+
+
 ]
 
 ---
 
-class: center, middle
-
-# 3. Plan your recipe and start coding
-
----
-
-# TidyText
+# tidytext
 
 .pull-left[
 
