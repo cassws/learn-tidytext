@@ -2,7 +2,7 @@
 title: "Text mining with tidytext + R"
 subtitle: ""
 author: "Cass Wilkinson Saldaña"
-date: "2021-05-03"
+date: "2021-07-20"
 output:
   xaringan::moon_reader:
     lib_dir: libs
